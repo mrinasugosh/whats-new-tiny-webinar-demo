@@ -124,9 +124,10 @@ export default function TinyEditor() {
         apiKey='TINY_MCE_API_KEY'
         onInit={(_evt, editor) => editorRef.current = editor}
         init={{
-            plugins: 'ai anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount linkchecker importword markdown math',
-            toolbar: 'aidialog aishortcuts | importword | math | undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+            plugins: 'ai anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount linkchecker importword markdown math exportpdf',
+            toolbar: 'aidialog aishortcuts | importword exportpdf | math | undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
             importword_service_url: "https://importdocx.converter.tiny.cloud/v2/convert/docx-html",
+            exportpdf_service_url: "https://exportpdf.converter.tiny.cloud/v1/convert",
             ai_request,
         }}
         />
