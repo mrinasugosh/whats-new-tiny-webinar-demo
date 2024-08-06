@@ -8,10 +8,10 @@ export default function TinyEditor() {
       apiKey='TINY_MCE_API_KEY'
       onInit={(_evt, editor) => editorRef.current = editor}
       init={{
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount linkchecker',
-        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount linkchecker importword',
+        toolbar: 'importword | undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        importword_service_url: "https://importdocx.converter.tiny.cloud/v2/convert/docx-html",
       }}
-      initialValue="Welcome to TinyMCE!"
     />
   );
 }
