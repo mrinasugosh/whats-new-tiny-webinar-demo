@@ -31,6 +31,7 @@ Switch branches to explore each feature:
   - Switch to the branch `step-5-ai-assistant-gemini-ai`.
 - For Export to Word, switch to the branch `step-6-export-word`.
 - For Export to PDF, switch to the branch `step-6-export-pdf`.
+- For Revision History, switch to the branch `step-7-revision-history`
 
 Each branch contains code examples and resources to help you integrate these features into your own TinyMCE projects.
 
