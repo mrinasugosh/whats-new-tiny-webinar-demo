@@ -1,11 +1,12 @@
 import { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
+import config from '../../config.json';
 
 export default function TinyEditor() {
   const editorRef = useRef(null);
   return (
     <Editor
-      apiKey='TINY_MCE_API_KEY'
+      apiKey={config.tinyMCEAPIKey}
       onInit={(_evt, editor) => editorRef.current = editor}
       init={{
         plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount linkchecker importword',
