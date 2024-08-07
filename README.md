@@ -9,6 +9,7 @@ Welcome to the "What's New with TinyMCE" webinar repository! This repo contains 
 - [**AI Assistant**](https://www.tiny.cloud/tinymce/features/ai-integration/?utm_campaign=devrel_webinar_tiny7_aug_24&utm_source=github&utm_medium=referral&utm_term=readme): Added integrations for TinyMCE AI Assistant in Gemini AI, Azure AI, and OpenAI
 - [**Export to Word**](https://www.tiny.cloud/tinymce/features/export-word/?utm_campaign=devrel_webinar_tiny7_aug_24&utm_source=github&utm_medium=referral&utm_term=readme): Export your content back to Word format, retaining styles.
 - [**Export to PDF**](https://www.tiny.cloud/tinymce/features/export-pdf/?utm_campaign=devrel_webinar_tiny7_aug_24&utm_source=github&utm_medium=referral&utm_term=readme): Convert your TinyMCE content into polished PDF documents.
+- [**Revision Hisory**](https://www.tiny.cloud/tinymce/features/revision-history/?utm_campaign=devrel_webinar_tiny7_aug_24&utm_source=github&utm_medium=referral&utm_term=readme): Track document changes across workflow stages
 
 ## Prerequisites:
 - Clone the Boilerplate Code
