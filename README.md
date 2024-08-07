@@ -30,7 +30,7 @@ Switch branches to explore each feature:
   - Switch to the branch `step-5-ai-assistant-aws-bedrock-ai`.
   - Switch to the branch `step-5-ai-assistant-gemini-ai`.
 - For Export to Word, switch to the branch `step-6-export-word`.
-- For Export to PDF, switch to the branch `step-7-export-pdf`.
+- For Export to PDF, switch to the branch `step-6-export-pdf`.
 
 Each branch contains code examples and resources to help you integrate these features into your own TinyMCE projects.
 
