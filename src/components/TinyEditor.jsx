@@ -4,6 +4,22 @@ import config from '../../config.json';
 
 export default function TinyEditor() {
     const editorRef = useRef(null);
+
+    const revisions = [
+      {
+          "revisionId": "1",
+          "createdAt": "2024-08-07T11:15:00.000Z",
+          "content": '<p dir="ltr">Hey {{Student.FirstName}}!</p>\n<p dir="ltr"> I received your question regarding the homework problem. This is what you need to solve this:</p>\n<p dir="ltr">If you need further clarification, please refer to the lecture notes from last week, or feel free to ask me questions on the steps you are getting stuck at.</p>\n<p dir="ltr">Regards,</p><p dir="ltr">{{Professor.FirstName}}</p>'
+      },
+    ];
+
+    const get_revisions = () => new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(revisions.sort((a, b) => new Date(a.createdAt) < new Date(b.createdAt) ? -1 : 1).reverse());
+      }, 1000);
+    });
+
+
     const fetchApi = import("https://unpkg.com/@microsoft/fetch-event-source@2.0.1/lib/esm/index.js").then(module => module.fetchEventSource);
 
     const api_key = config.OPENAI_API_KEY;
@@ -125,11 +141,12 @@ export default function TinyEditor() {
         apiKey={config.tinyMCEAPIKey}
         onInit={(_evt, editor) => editorRef.current = editor}
         init={{
-            plugins: 'ai anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount linkchecker importword markdown math exportpdf',
-            toolbar: 'aidialog aishortcuts | importword exportpdf | math | undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+            plugins: 'ai revisionhistory anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount linkchecker importword markdown math exportpdf',
+            toolbar: 'aidialog aishortcuts | importword exportpdf | math | undo redo revisionhistory | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
             importword_service_url: "https://importdocx.converter.tiny.cloud/v2/convert/docx-html",
             exportpdf_service_url: "https://exportpdf.converter.tiny.cloud/v1/convert",
             ai_request,
+            revisionhistory_fetch: get_revisions,
         }}
         initialValue='<p dir="ltr">Hey {{Student.FirstName}}!</p><br/><p dir="ltr"> I received your question regarding the homework problem. This is what you need to solve this:</p><br/><p dir="ltr">If you need further clarification, please refer to the lecture notes from last week, or feel free to ask me questions on the steps you are getting stuck at.</p><br/><p dir="ltr">Regards,</p><p dir="ltr">{{Professor.FirstName}}</p>'
         />
